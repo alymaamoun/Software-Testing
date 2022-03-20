@@ -45,7 +45,7 @@ public class MatrixTest {
         int[][] subMatrix2 = {{-1},{-1}};
         int[][] matrix5 = {{1,1},{1,1}};
         int[][] matrix6 = {{1,1},{1,1},{3,4}};
-        assertArrayEquals(subMatrix2,matrix.subtractMatrix(matrix3,matrix4,2,2,3,2));
+        assertArrayEquals(subMatrix2,matrix.subtractMatrix(matrix5,matrix6,2,2,2,3))
     }
 
     @Test
