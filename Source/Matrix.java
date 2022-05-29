@@ -1,4 +1,4 @@
-package assignment2;
+package Project;
 
 public class Matrix {
     int [][] faultMatrix={{-1},{-1}};
@@ -37,7 +37,7 @@ public class Matrix {
             return faultMatrix;
         }
 
-         else if(rows1 == rows2 && columns1 == columns2){
+         else if(rows1 == rows2 || columns1 == columns2){
             for (int i=0; i<rows1; i++){
                 for (int j=0; j<columns1; j++){
                     subMatrix[i][j] = matrix1[i][j] - matrix2[i][j];
@@ -116,6 +116,32 @@ public class Matrix {
             }
         }
         return transposeMatrix;
+    }
+    
+    
+    
+    
+    
+    
+    public void matrixSize(int rows1,int columns1){
+        int rowvalue = rows1;
+        int colsvalue = columns1;
+        int square;
+        if(rows1 == columns1){
+            square = 1;
+            System.out.print(rows1);
+            System.out.println(columns1);
+            System.out.println("Matrix is square matrix");
+        }
+
+        if(rows1 != columns1){
+            square = 0;
+            System.out.print(rows1);
+            System.out.println(columns1);
+            System.out.println("Matrix isnt square matrix");
+
+        }
+
     }
 
 }
