@@ -1,4 +1,4 @@
-package assignment2;
+package Project;
 
 import java.util.*;
 
@@ -18,7 +18,9 @@ public class Main {
     private static int matrix1[][] = new int[100][100];
     private static int matrix2[][] = new int[100][100];
 
-    public static void main(String[] args) {
+    
+    public static void  mainCaller()
+    {
         System.out.println("Instructions: \n - Enter your equation like \"A+B\" \n - User ^ this symbol for transpose i.e A^ - B \n - Separate with spaces");
         Matrix matrix = new Matrix();
         System.out.println("Enter your equation: ");
@@ -68,20 +70,33 @@ public class Main {
                 case "+":
                     int addMatrix[][] = new int[rows1][columns1];
                     addMatrix = matrix.addMatrix(matrix1, matrix2, rows1, columns1, rows2, columns2);
-                    display(addMatrix);
+                    matrix.matrixSize(rows1, columns1);
+                    displayStub(addMatrix);
                     break;
                 case "-":
                     int subMatrix[][] = new int[rows1][columns1];
                     subMatrix = matrix.subtractMatrix(matrix1, matrix2, rows1, columns1, rows2, columns2);
+                    matrix.matrixSize(rows1, columns1);
                     display(subMatrix);
                     break;
                 case "*":
                     int mulMatrix[][] = new int[rows1][columns1];
                     mulMatrix = matrix.multiplyMatrix(matrix1, matrix2, rows1, columns1, rows2, columns2);
+                    matrix.matrixSize(rows1, columns2);
                     display(mulMatrix);
                     break;
             }
         }
+        
+    }
+    
+    
+    
+    
+    
+    public static void main(String[] args) {
+        mainCaller();
+        
     }
 
     private static boolean isTranspose(String name){
@@ -136,5 +151,58 @@ public class Main {
                 System.out.print("\n");
             }
         }
+       
     }
-}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private static void displayStub(int[][] matrix){
+        System.out.println("Stub matrix is: ");
+        int[][] stubmatrix = { { 1, 2 }, { 3, 4 } };
+
+            for (int i=0; i<2; i++)
+            {
+                for (int j=0; j<2; j++)
+                {
+                    System.out.print(stubmatrix[i][j] + " ");
+                } 
+                System.out.print("\n");
+            }
+    }
+    
+    
+    
+    
+    
+    
+    public static void  mainCallerDriver()
+        {
+            Matrix matrix = new Matrix();
+            rows1=2;
+            columns1=2;
+            rows2=2;
+            columns2=2;
+            int[][] matrix1 = { { 1, 2 }, { 3, 4 } };
+            int[][] matrix2 = { { 1, 2 }, { 3, 4 } };
+            int addMatrix[][] = new int[2][2];
+            addMatrix = matrix.addMatrix(matrix1, matrix2,2,2,2,2);
+            
+            display(addMatrix);
+ 
+        }
+        
+    
+    
+        }
+    
+    
+    
+    
+    
+    
